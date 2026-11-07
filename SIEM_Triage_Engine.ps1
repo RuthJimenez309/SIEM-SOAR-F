@@ -16,7 +16,7 @@ function Start-SIEMTriageEngine {
                 Attack = $SecurityEvent.Attack
                 Target = $SecurityEvent.Target
                 Status = $Action
-                Framework = "NIST_SP_800-61_CIS_Control_17"
+                Framework = if ($SecurityEvent.Attack -eq "Web_XSS_Injection") { "NIST_Application_Security_CIS_Control_16" } else { "NIST_SP_800-61_CIS_Control_17" }
             }
             $TriageEntry | ConvertTo-Json -Compress | Out-File -FilePath $TriagePath -Append -Encoding utf8
         } catch {}

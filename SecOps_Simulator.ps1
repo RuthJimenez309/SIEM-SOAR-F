@@ -5,7 +5,7 @@ function Out-SecOpsAttackSimulator {
         [int]$EventCount = 50,
         [int]$IntervalMS = 100
     )
-    $Attacks = @("Brute_Force_EntraID", "Data_Exfiltration_WAN", "Firewall_Rule_Disabled", "BitLocker_Key_Export", "M365_Privilege_Escalation")
+    $Attacks = @("Brute_Force_EntraID", "Data_Exfiltration_WAN", "Firewall_Rule_Disabled", "BitLocker_Key_Export", "M365_Privilege_Escalation", "Web_XSS_Injection")
     $Targets = @("192.168.1.50", "10.0.0.12", "usr_admin01", "usr_exec04", "WIN-EDR-PROD09")
     
     for ($i = 0; $i -lt $EventCount; $i++) {
